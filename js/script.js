@@ -1,6 +1,6 @@
-var output = function(number) {
+var output = function(myNumber) {
     var array = [];
-    for (var index = 1; index <= number; index++) {
+    for (var index = 1; index <= myNumber; index++) {
       if ((index % 15) === 0) {
         array.push("Ping Pong");
       } else if ((index % 5) === 0) {
@@ -17,13 +17,13 @@ var output = function(number) {
     
     $(document).ready(function() {
     $("form#game").submit(function(event) {
-      $("#results").empty();
+      $("#display").empty();
     
     
-      var number = parseInt($("input#numeral").val());
-      var array = output(number);
+      var myNumber = parseInt($("input#numeral").val());
+      var array = output(myNumber);
       array.forEach(function(aftermath) {
-        $("#results").append("<li>" + aftermath + "</li>");
+        $("#display").append("<li>" + aftermath + "</li>");
         event.preventDefault();
       });
     
